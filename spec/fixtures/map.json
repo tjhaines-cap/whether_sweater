@@ -1,0 +1,32 @@
+{"info": 
+  {"statuscode": 0,
+   "copyright": 
+    {"text": "© 2022 MapQuest, Inc.",
+     "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+     "imageAltText": "© 2022 MapQuest, Inc."},
+   "messages": []},
+ "options": {"maxResults": -1, "thumbMaps": true, "ignoreLatLngInput": false},
+ "results": 
+  [{"providedLocation": {"location": "Manitou Springs, CO"},
+    "locations": 
+     [{"street": "",
+       "adminArea6": "",
+       "adminArea6Type": "Neighborhood",
+       "adminArea5": "Manitou Springs",
+       "adminArea5Type": "City",
+       "adminArea4": "El Paso County",
+       "adminArea4Type": "County",
+       "adminArea3": "CO",
+       "adminArea3Type": "State",
+       "adminArea1": "US",
+       "adminArea1Type": "Country",
+       "postalCode": "",
+       "geocodeQualityCode": "A5XAX",
+       "geocodeQuality": "CITY",
+       "dragPoint": false,
+       "sideOfStreet": "N",
+       "linkId": "282039144",
+       "unknownInput": "",
+       "type": "s",
+       "latLng": {"lat": 38.857568, "lng": -104.912311},
+       "displayLatLng": {"lat": 38.857568, "lng": -104.912311}}]}]}

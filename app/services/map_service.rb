@@ -6,8 +6,6 @@ class MapService
   end
 
   def self.connection
-    Faraday.new(url: "http://www.mapquestapi.com") do |f|
-      f.params['api_key'] = ENV['map_api_key']
-    end
+    Faraday.new(url: "http://www.mapquestapi.com")
   end
 end
