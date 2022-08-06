@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describ WeatherService do
+RSpec.describe WeatherService do
 
   it 'can retrieve weather data from OpenWeather API', :vcr do
-    weather_json = WeatherService.get_weather(latitude, longitude) 
+    weather_json = WeatherService.get_weather(38.8576, 104.9128) 
 
-    expect(weather_json).to have_keys(:current, :daily, :hourly)
+    expect(weather_json.keys).to include(:current, :daily, :hourly)
     current = weather_json[:current]
-    expect(current).to have_keys(:dt, :sunrise)
+    expect(current.keys).to include(:dt, :sunrise)
   end
 end
