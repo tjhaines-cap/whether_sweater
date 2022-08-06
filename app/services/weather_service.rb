@@ -1,7 +1,7 @@
 class WeatherService 
 
   def self.get_weather(latitude, longitude)
-    response = connection.get("/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&units=imperial") 
+    response = connection.get("/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&units=imperial") 
     json = JSON.parse(response.body, symbolize_names: true)
   end
 

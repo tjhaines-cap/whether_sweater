@@ -6,6 +6,7 @@ RSpec.describe WeatherService do
     weather_json = WeatherService.get_weather(38.8576, 104.9128) 
 
     expect(weather_json.keys).to include(:current, :daily, :hourly)
+    expect(weather_json.keys).to_not include(:minutely, :alerts)
     current = weather_json[:current]
     expect(current.keys).to include(:dt, :sunrise)
   end
