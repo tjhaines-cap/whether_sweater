@@ -6,10 +6,10 @@ RSpec.describe MapService do
     describe '#get_latitude_longitude' do
       it "gets the latitude and long", :vcr do
         response = MapService.get_latitude_longitude("Manitou Springs, CO")
-      
-        data = response[:info][:results][0]
+        
+        data = response[:results][0]
         expect(data).to be_a(Hash)
-        lat_long = data[:displayLatLng]
+        lat_long = data[:locations][0][:latLng]
         expect(lat_long).to have_key(:lat)
         expect(lat_long).to have_key(:lng)
         expect(lat_long[:lat]).to be_a(Float)

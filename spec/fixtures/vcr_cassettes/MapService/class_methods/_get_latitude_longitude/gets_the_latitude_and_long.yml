@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/geocoding/v1/address?api_key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&location=Manitou%20Springs,%20CO
+    uri: http://www.mapquestapi.com/geocoding/v1/address?api_key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&location=Manitou%20Springs,%20CO
     body:
       encoding: US-ASCII
       string: ''
@@ -15,21 +15,43 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: ''
     headers:
       Date:
-      - Sat, 06 Aug 2022 17:13:22 GMT
+      - Sat, 06 Aug 2022 23:03:42 GMT
       Content-Type:
-      - text/plain
+      - application/json;charset=UTF-8
       Content-Length:
-      - '50'
-      Access-Control-Allow-Origin:
-      - "*"
+      - '1053'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Sat, 06 Aug 2022 23:03:42 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Set-Cookie:
+      - JSESSIONID=AA363F3F6CE7A5D4D51132A08C4E524A; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
     body:
       encoding: UTF-8
-      string: The AppKey submitted with this request is invalid.
-  recorded_at: Sat, 06 Aug 2022 17:13:22 GMT
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2022 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Manitou
+        Springs, CO"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Manitou
+        Springs","adminArea5Type":"City","adminArea4":"El Paso County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039144","unknownInput":"","type":"s","latLng":{"lat":38.857568,"lng":-104.912311},"displayLatLng":{"lat":38.857568,"lng":-104.912311},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&type=map&size=225,160&locations=38.857568,-104.912311|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1365914891"}]}]}'
+  recorded_at: Sat, 06 Aug 2022 23:03:42 GMT
 recorded_with: VCR 6.1.0
