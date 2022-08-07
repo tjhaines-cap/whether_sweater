@@ -1,7 +1,10 @@
 class Api::V1::UsersController < ApplicationController
 
   def create
-    binding.pry
+    # binding.pry
+    params[:api_key] = generate_api_key
+    # binding.pry
+    #insert check that if api key is duplicate it generates a different one
     user = User.new(user_params)
     if user.save      
       render status: 201, json: UserSerializer.new(user)
@@ -11,6 +14,10 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password, :password_confirmation, :api_key)
+  end
+
+  def generate_api_key
+    key = SecureRandom.hex(20)
   end
 end
