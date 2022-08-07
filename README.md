@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Local Installation 
+`bundle install`
+`bundle exec figaro install`
+`rails db:{create}`
