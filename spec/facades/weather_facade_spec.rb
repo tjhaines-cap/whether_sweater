@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe WeatherFacade do
 
   describe '#get_weather' do
-    it 'returns weather objects from get weather' do
-      weather_data = JSON.parse(File.read("spec/fixtures/weather.json"), symbolize_names: true)
-      weather = Weather.new(weather_data)
+    it 'returns weather objects from get weather', :vcr do
+      weather = WeatherFacade.get_weather(38.8576, 104.9128)
 
       expect(weather).to be_a(Weather)
       expect(weather.attributes.keys).to include(:current_weather, :daily_weather, :hourly_weather) 
