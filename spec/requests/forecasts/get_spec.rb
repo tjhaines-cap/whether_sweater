@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Gets" do
 
-  describe "GET /forecasts" do
+  describe "GET /forecast" do
     it "returns forecast informaiton", :vcr do
       get "/api/v1/forecast?location=denver,co"
 

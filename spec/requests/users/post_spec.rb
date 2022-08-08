@@ -8,8 +8,8 @@ RSpec.describe "Posts" do
                               email: "whatever@example.com",
                               password: "password",
                               password_confirmation: "password"
-    }.to_json
-# binding.pry
+                            }
+
       user_data = JSON.parse(response.body, symbolize_names: true)
       user = user_data[:data]
       expect(user[:type]).to eq("users")
