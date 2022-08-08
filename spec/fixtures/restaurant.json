@@ -1,0 +1,19 @@
+{"businesses": 
+  [{"id": "6kRbrLNIZKZ1fcjgsTFobg",
+    "alias": "fortune-wok-to-table-denver",
+    "name": "Fortune Wok to Table",
+    "price": "$$",
+    "location": 
+     {"address1": "2817 E 3rd Ave",
+      "address2": "",
+      "address3": "",
+      "city": "Denver",
+      "zip_code": "80206",
+      "country": "US",
+      "state": "CO",
+      "display_address": ["2817 E 3rd Ave", "Denver, CO 80206"]},
+    "phone": "+13033217788",
+    "display_phone": "(303) 321-7788",
+    "distance": 2093.330545587293}],
+  "total": 145,
+  "region": {"center": {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}

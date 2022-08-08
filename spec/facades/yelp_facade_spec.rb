@@ -8,5 +8,7 @@ RSpec.describe YelpFacade do
     expect(restaurant).to be_a(Hash)
     expect(restaurant).to have_key(:name)
     expect(restaurant).to have_key(:address)
+    expect(restaurant[:name]).to be_a(String)
+    expect(restaurant[:address]).to be_a(String)
   end
 end

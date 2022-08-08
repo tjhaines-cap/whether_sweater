@@ -5,7 +5,7 @@ class YelpFacade
     restaurant_data = json[:businesses][0]
     restaurant = {
       name: restaurant_data[:name],
-      address: restaurant_data[:location][:display_address]
+      address: restaurant_data[:location][:display_address].join(", ")
     }
   end
 end
