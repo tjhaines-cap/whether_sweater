@@ -11,6 +11,7 @@ RSpec.describe "Posts" do
                                 password_confirmation: "password"
                               }
 
+        expect(response.status).to eq(201)
         user_data = JSON.parse(response.body, symbolize_names: true)
         user = user_data[:data]
         expect(user[:type]).to eq("users")
@@ -59,6 +60,18 @@ RSpec.describe "Posts" do
         json = JSON.parse(response.body, symbolize_names: true)
         expect(response.status).to eq(400)
         expect(json[:error]).to eq("Please enter a password.")
+      end
+
+      it 'returns an error if email field is blank', :vcr do
+        post '/api/v1/users', params: {
+                                email: "",
+                                password: "pass",
+                                password_confirmation: "pass"
+                              }
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(response.status).to eq(400)
+        expect(json[:error]).to eq("Please enter an email.")
       end
     end
   end
