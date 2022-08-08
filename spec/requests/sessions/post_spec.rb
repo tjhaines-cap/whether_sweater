@@ -25,5 +25,34 @@ RSpec.describe 'Posts' do
         expect(user[:attributes][:api_key]).to be_a(String)
       end
     end
+
+    describe 'sad path' do
+      it 'returns an error if invalid email or password are given', :vcr do
+        post '/api/v1/users', params: {
+          email: "whatever@example.com",
+          password: "password",
+          password_confirmation: "password"
+        }
+
+        post '/api/v1/sessions', params: {
+          email: "w@gmail.com",
+          password: "password"
+        }
+
+        session = JSON.parse(response.body, symbolize_names: true)
+        # binding.pry
+        expect(response.status).to eq(404)
+        expect(session[:error]).to eq("Invalid Credentials")
+        
+        post '/api/v1/sessions', params: {
+          email: "whatever@example.com",
+          password: "pass"
+        }
+
+        session = JSON.parse(response.body, symbolize_names: true)
+        expect(response.status).to eq(404)
+        expect(session[:error]).to eq("Invalid Credentials")
+      end
+    end
   end
 end
