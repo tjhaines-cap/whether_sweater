@@ -40,7 +40,6 @@ RSpec.describe 'Posts' do
         }
 
         session = JSON.parse(response.body, symbolize_names: true)
-        # binding.pry
         expect(response.status).to eq(404)
         expect(session[:error]).to eq("Invalid Credentials")
         
