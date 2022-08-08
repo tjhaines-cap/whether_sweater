@@ -18,6 +18,9 @@ RSpec.describe "Posts" do
         expect(user[:id]).to be_a(Integer)
         expect(user[:attributes][:email]).to be_a(String)
         expect(user[:attributes][:api_key]).to be_a(String)
+        stored_user = User.all.first
+        expect(stored_user.email).to eq("whatever@example.com")
+        expect(stored_user.api_key).to be_a(String)
       end
     end
 
