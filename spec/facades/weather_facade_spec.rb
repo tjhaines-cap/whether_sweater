@@ -14,7 +14,7 @@ RSpec.describe WeatherFacade do
 
   describe '#get_weather_summary' do
     it 'returns current weather summary and temperature for a location', :vcr do
-      weather_summary = WeatherFacade.get_weather_summary('denver,co')
+      weather_summary = WeatherFacade.get_weather_summary(38.8576, 104.9128)
 
       expect(weather_summary.keys.length).to eq(2)
       expect(weather_summary.keys).to include(:summary, :temperature)
