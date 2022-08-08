@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe YelpFacade do
 
-  it 'returns the name and address for a restaurant given location and cuisine' do
+  it 'returns the name and address for a restaurant given location and cuisine', :vcr do
     restaurant = YelpFacade.get_restaurant('denver,co', 'chinese')
 
     expect(restaurant).to be_a(Hash)
