@@ -7,14 +7,15 @@ RSpec.describe 'Gets' do
       get '/api/v1/munchies?location=denver,co&food=chinese'
 
       munchie_response = JSON.parse(response.body, symbolize_names: true)
-      expect(munchie_response).to be_a(Hash)
-      expect(munchie_response[:id]).to eq(nil)
-      expect(munchie_response[:type]).to eq("munchie")
-      expect(munchie_response[:attributes]).to be_a(Hash)
-      expect(munchie_response[:attributes]).to have_key(:destination_city)
-      expect(munchie_response[:attributes][:destination_city]).to be_a(String)
-      forecast = munchie_response[:attributes][:forecast]
-      restaurant = munchie_response[:attributes][:restaurant]
+      munchie_data  = munchie_response[:data]
+      expect(munchie_data).to be_a(Hash)
+      expect(munchie_data[:id]).to eq(nil)
+      expect(munchie_data[:type]).to eq("munchie")
+      expect(munchie_data[:attributes]).to be_a(Hash)
+      expect(munchie_data[:attributes]).to have_key(:destination_city)
+      expect(munchie_data[:attributes][:destination_city]).to be_a(String)
+      forecast = munchie_data[:attributes][:forecast]
+      restaurant = munchie_data[:attributes][:restaurant]
       expect(forecast.keys.length).to eq(2)
       expect(forecast.keys).to include(:summary, :temperature)
       expect(restaurant.keys.length).to eq(2)

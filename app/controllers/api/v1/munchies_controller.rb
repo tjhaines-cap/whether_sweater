@@ -6,7 +6,7 @@ class Api::V1::MunchiesController < ApplicationController
         render status: 400
       else
         response = MunchiesFacade.get_restaurant_and_weather(params[:location], params[:food])
-        render json: response
+        render json: {data: response}
       end
     else
       render status: 400

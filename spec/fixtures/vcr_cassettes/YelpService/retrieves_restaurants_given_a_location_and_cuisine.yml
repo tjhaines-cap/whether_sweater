@@ -26,36 +26,36 @@ http_interactions:
       - application/json
       Ratelimit-Dailylimit:
       - '5000'
-      Ratelimit-Remaining:
-      - '4998'
       Ratelimit-Resettime:
       - '2022-08-09T00:00:00+00:00'
-      X-B3-Sampled:
-      - '0'
+      X-Routing-Service:
+      - routing-main--uswest2-77d4785ff7-t4r4k; site=public_api_v3
       X-Zipkin-Id:
-      - d8f41337c4f05745
+      - 8581ce508a3fca6e
       Server:
       - envoy
-      X-Routing-Service:
-      - routing-main--uswest2-5569564ccc-rccgq; site=public_api_v3
+      Ratelimit-Remaining:
+      - '4983'
+      X-B3-Sampled:
+      - '0'
       X-Cloudmap:
       - routing_uswest2
       X-Mode:
       - ro
       X-Proxied:
-      - 10-69-130-205-uswest2bprod
+      - 10-69-126-17-uswest2aprod
       X-Extlb:
-      - 10-69-130-205-uswest2bprod
+      - 10-69-126-17-uswest2aprod
       Cache-Control:
       - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 08 Aug 2022 15:23:32 GMT
+      - Mon, 08 Aug 2022 17:42:47 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8262-DEN
+      - cache-den8259-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -276,5 +276,5 @@ http_interactions:
         S Federal Blvd", "Ste D", "Denver, CO 80219"]}, "phone": "+13039752497", "display_phone":
         "(303) 975-2497", "distance": 6197.042726827343}], "total": 145, "region":
         {"center": {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
-  recorded_at: Mon, 08 Aug 2022 15:23:32 GMT
+  recorded_at: Mon, 08 Aug 2022 17:42:47 GMT
 recorded_with: VCR 6.1.0
