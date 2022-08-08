@@ -8,8 +8,12 @@ class Api::V1::UsersController < ApplicationController
     # binding.pry
     if user.save      
       render status: 201, json: {data: {type: "users", id: user.id, attributes: {email: user.email, api_key: user.api_key}}}
-    else
-      render status: 401
+    elsif user.errors.full_messages == ['Email has already been taken']
+      render json: { error: 'That email is already in use! Please try again with a unique email.'}, status: 400
+    elsif user.errors.full_messages == ["Password confirmation doesn't match Password"]
+      render json: { error: 'Passwords do not match.'}, status: 400
+    elsif user.errors.full_messages == ["Password can't be blank", "Password digest can't be blank"]
+      render json: { error: 'Please enter a password.'}, status: 400
     end
   end
 
