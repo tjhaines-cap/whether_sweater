@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
       render json: { error: 'Please enter an email.'}, status: 400
     elsif user.errors.full_messages == ["Password confirmation doesn't match Password"]
       render json: { error: 'Passwords do not match.'}, status: 400
-    elsif user.errors.full_messages == ["Password can't be blank", "Password digest can't be blank"]
+    elsif user.errors.full_messages.include?("Password can't be blank") || user.errors.full_messages.include?("Password digest can't be blank")
       render json: { error: 'Please enter a password.'}, status: 400
     end
   end
