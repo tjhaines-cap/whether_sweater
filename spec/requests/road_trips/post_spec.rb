@@ -55,6 +55,16 @@ RSpec.describe "Posts" do
         expect(response.status).to eq(401)
         expect(response.body).to include("Unauthorized")
       end
+
+      it 'returns error unauthorized if no api key is given', :vcr do
+        post '/api/v1/road_trip', params: {
+                                    origin: "Denver,CO",
+                                    destination: "Pueblo,CO"
+                                  }
+
+        expect(response.status).to eq(401)
+        expect(response.body).to include("Unauthorized")
+      end
     end
   end
 end
