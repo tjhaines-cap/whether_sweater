@@ -1,7 +1,6 @@
 class Api::V1::RoadTripsController < ApplicationController
 
   def create
-    # binding.pry
     if valid_api_key?(params[:api_key]) || User.find_by(api_key: params[:api_key])
       travel = MapFacade.get_travel_time(params[:origin], params[:destination])
       hours = travel.split[0].to_i
