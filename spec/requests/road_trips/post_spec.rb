@@ -12,22 +12,23 @@ RSpec.describe "Posts" do
                               }
         
         post '/api/v1/sessions', params: {
-                                "email": "whatever@example.com",
-                                "password": "password"
+                                email: "whatever@example.com",
+                                password: "password"
                               }
-
+  
         user_data = JSON.parse(response.body, symbolize_names: true)
         user = user_data[:data]                      
         @api_key = user[:attributes][:api_key]
+        allow_any_instance_of(ApplicationController).to receive(:valid_api_key?).and_return(true)
       end
-
+      
       it 'returns the start city, end city, travel time, and weather at location at eta', :vcr do
         post '/api/v1/road_trip', params: {
-                                    "origin": "Denver,CO",
-                                    "destination": "Pueblo,CO",
-                                    "api_key": @api_key
+                                    origin: "Denver,CO",
+                                    destination: "Pueblo,CO",
+                                    api_key: @api_key
                                   }
-# binding.pry
+
         expect(response.status).to eq(200)
         road_trip_data = JSON.parse(response.body, symbolize_names: true)
         road_trip = road_trip_data[:data]
@@ -40,6 +41,19 @@ RSpec.describe "Posts" do
         expect(attributes[:travel_time]).to be_a(String)
         expect(attributes[:weather_at_eta][:temperature]).to be_a(Float)
         expect(attributes[:weather_at_eta][:conditions]).to be_a(String)
+      end
+    end
+
+    describe "sad path" do
+      it "returns error unauthorized if incorrect api key given", :vcr do
+        post '/api/v1/road_trip', params: {
+                                    origin: "Denver,CO",
+                                    destination: "Pueblo,CO",
+                                    api_key: "5"
+                                  }
+
+        expect(response.status).to eq(401)
+        expect(response.body).to include("Unauthorized")
       end
     end
   end
