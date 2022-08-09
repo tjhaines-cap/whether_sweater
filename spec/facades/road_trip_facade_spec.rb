@@ -7,12 +7,10 @@ RSpec.describe RoadTripFacade do
       road_trip = RoadTripFacade.get_roadtrip_info("Denver, CO", "Estes Park, CO")
 
       expect(road_trip).to be_a(RoadTrip)
-      expect(road_trip.id).to eq(nil)
-      expect(road_trip.type).to eq("roadtrip")
-      expect(road_trip.attributes[:start_city]).to be_a(String)
-      expect(road_trip.attributes[:end_city]).to be_a(String)
-      expect(road_trip.attributes[:travel_time]).to be_a(String)
-      expect(road_trip.attributes[:weather_at_eta].keys).to include(:temperature, :conditions)
+      expect(road_trip.start_city).to be_a(String)
+      expect(road_trip.end_city).to be_a(String)
+      expect(road_trip.travel_time).to be_a(String)
+      expect(road_trip.weather_at_eta.keys).to include(:temperature, :conditions)
     end
   end
 end
