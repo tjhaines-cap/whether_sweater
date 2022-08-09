@@ -1,9 +1,10 @@
 # Whether Sweater
 
-This application creates an API for a Front End team to utilize to provide a user with information about
-weather forecasts at a given location. It also has an enpoint to create a road trip and get the weather at the
-time of arrival. Two external APIs are used to get location and weather data. The data retrieved from the 
-external APIs is then formatted and any extra unnecessary data is not passed on in the endpoints created in this app.
+This application exposes an API that aggregates data from two external APIs.
+The API requires authentication for the road trip endpoint. When a user creates an 
+account an api key is generated, when a user logs in their key is returned,
+and it is required for a user to supply a key to use the road trip endpoint.
+The API consumption and exposure are tested and utilize vcr. 
 
 ## Local Installation 
 To install this on your local machine, clone this repository and run the following commands.
