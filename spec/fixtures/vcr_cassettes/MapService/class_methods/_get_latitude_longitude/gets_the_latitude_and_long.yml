@@ -19,11 +19,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Sat, 06 Aug 2022 23:07:04 GMT
+      - Tue, 09 Aug 2022 16:48:30 GMT
       Content-Type:
       - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1052'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sat, 06 Aug 2022 23:07:04 GMT
+      - Tue, 09 Aug 2022 16:48:30 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=2C6F0FBE6A0850C9427EA74AE8B2DE61; Path=/; HttpOnly
+      - JSESSIONID=75C8FBF6174D5C147DA800F32ECEF09F; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -52,6 +52,6 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Manitou
         Springs, CO"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Manitou
-        Springs","adminArea5Type":"City","adminArea4":"El Paso County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039144","unknownInput":"","type":"s","latLng":{"lat":38.857568,"lng":-104.912311},"displayLatLng":{"lat":38.857568,"lng":-104.912311},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&type=map&size=225,160&locations=38.857568,-104.912311|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1355202739"}]}]}'
-  recorded_at: Sat, 06 Aug 2022 23:07:04 GMT
+        Springs","adminArea5Type":"City","adminArea4":"El Paso County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039144","unknownInput":"","type":"s","latLng":{"lat":38.857568,"lng":-104.912311},"displayLatLng":{"lat":38.857568,"lng":-104.912311},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=GSjwm6gzesa5CaajhLk6xEHOjidsE0F2&type=map&size=225,160&locations=38.857568,-104.912311|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1789523329"}]}]}'
+  recorded_at: Tue, 09 Aug 2022 16:48:29 GMT
 recorded_with: VCR 6.1.0
