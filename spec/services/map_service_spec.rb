@@ -16,5 +16,14 @@ RSpec.describe MapService do
         expect(lat_long[:lng]).to be_a(Float)
       end
     end
+
+    describe '#get_route' do
+      it "gets the travel  time given a start and end point", :vcr do
+        response = MapService.get_route("Denver,CO", "Estes Park,CO")
+
+        route = response[:route]
+        expect(route).to have_key(:time)
+      end
+    end
   end
 end
