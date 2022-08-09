@@ -8,4 +8,10 @@ RSpec.describe MapFacade do
     expect(lat_lng[:latitude]).to eq(38.857568)
     expect(lat_lng[:longitude]).to eq(-104.912311)
   end
+
+  it 'returns the travel time given a start and end point', :vcr do
+    travel_time = MapFacade.get_travel_time("Denver, CO", "Estes Park, CO")
+
+    expect(travel_time).to be_a(String)
+  end
 end
