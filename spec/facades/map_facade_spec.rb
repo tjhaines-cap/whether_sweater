@@ -11,7 +11,7 @@ RSpec.describe MapFacade do
 
   it 'returns the travel time given a start and end point', :vcr do
     travel_time = MapFacade.get_travel_time("Denver, CO", "Estes Park, CO")
-
-    expect(travel_time).to be_a(String)
+    
+    expect(travel_time).to eq("1 hours, 22 minutes")
   end
 end
