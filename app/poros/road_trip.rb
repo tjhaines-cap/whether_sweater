@@ -6,7 +6,11 @@ class RoadTrip
     @start_city = start_point
     @end_city = end_point
     @travel_time = travel_time
-    @weather_at_eta = weather_at_location
+    if travel_time == "impossible"
+      @weather_at_eta = {}
+    else
+      @weather_at_eta = weather_at_location
+    end
   end
 
 end
